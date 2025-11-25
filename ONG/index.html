@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olas de Vida</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/logo_favicon.ico">
+</head>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    let indiceActual = 0;
+    const track = document.getElementById('carruselTrack');
+    const imagenes = document.querySelectorAll('.tarjeta_imagen');
+    const totalImagenes = imagenes.length;
+    let imagenesPorVista = 3;
+    let autoplayInterval;
+
+    function actualizarImagenesPorVista() {
+        if (window.innerWidth <= 768) {
+            imagenesPorVista = 1;
+        } else if (window.innerWidth <= 1024) {
+            imagenesPorVista = 2;
+        } else {
+            imagenesPorVista = 3;
+        }
+    }
+
+    function crearIndicadores() {
+        const contenedorIndicadores = document.getElementById('indicadores');
+        contenedorIndicadores.innerHTML = '';
+        
+        const totalGrupos = Math.ceil(totalImagenes - imagenesPorVista + 1);
+        
+        for (let i = 0; i < totalGrupos; i++) {
+            const indicador = document.createElement('div');
+            indicador.classList.add('indicador');
+            if (i === 0) indicador.classList.add('activo');
+            indicador.addEventListener('click', () => irASlide(i));
+            contenedorIndicadores.appendChild(indicador);
+        }
+    }
+
+    window.moverCarrusel = function(direccion) {
+        actualizarImagenesPorVista();
+        
+        indiceActual += direccion;
+        
+        const maxIndice = totalImagenes - imagenesPorVista;
+        
+        if (indiceActual < 0) {
+            indiceActual = maxIndice;
+        } else if (indiceActual > maxIndice) {
+            indiceActual = 0;
+        }
+        
+        actualizarCarrusel();
+    }
+
+    function irASlide(indice) {
+        indiceActual = indice;
+        actualizarCarrusel();
+    }
+
+    function actualizarCarrusel() {
+        const anchoImagen = imagenes[0].offsetWidth;
+        const gap = 30;
+        const desplazamiento = -(indiceActual * (anchoImagen + gap));
+        
+        track.style.transform = `translateX(${desplazamiento}px)`;
+        
+        const indicadores = document.querySelectorAll('.indicador');
+        indicadores.forEach((ind, i) => {
+            ind.classList.toggle('activo', i === indiceActual);
+        });
+    }
+
+    function iniciarAutoplay() {
+        autoplayInterval = setInterval(() => {
+            window.moverCarrusel(1);
+        }, 5000);
+    }
+
+    const carruselContainer = document.querySelector('.carrusel_container');
+    if (carruselContainer) {
+        carruselContainer.addEventListener('mouseenter', () => {
+            clearInterval(autoplayInterval);
+        });
+
+        carruselContainer.addEventListener('mouseleave', () => {
+            iniciarAutoplay();
+        });
+    }
+
+    // Inicializar
+    actualizarImagenesPorVista();
+    crearIndicadores();
+    iniciarAutoplay();
+
+    window.addEventListener('resize', () => {
+        actualizarImagenesPorVista();
+        crearIndicadores();
+        actualizarCarrusel();
+    });
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        if (touchEndX < touchStartX - 50) {
+            window.moverCarrusel(1); // Swipe izquierda
+        }
+        if (touchEndX > touchStartX + 50) {
+            window.moverCarrusel(-1); // Swipe derecha
+        }
+    }
+});
+</script>
+
+<body>
+
+    <header class="barra_navegacion">
+        <div class="logo"> <a href="index.html"><img src="img/logo.jpg" alt="logo_olas_de_vida"></a></div>
+
+        <nav>
+            <ul class="menu">
+                <li><a class="boton_menu" href="index.html">Inicio</a></li>
+                <li><a class="boton_menu" href="nosotros.html">Nosotros</a></li>
+                <li class="item_desplegable">
+                    <a class="boton_menu" href="proyectos.html">Proyectos</a>
+                    <ul class="menu_desplegable">
+                        <li><a href="proyectos.html#tortugas">Protección de Tortugas</a></li>
+                        <li><a href="proyectos.html#arrecifes">Restauración de Arrecifes</a></li>
+                        <li><a href="proyectos.html#costas">Limpieza de Costas</a></li>
+                        <li><a href="proyectos.html#ballenas">Monitoreo de Ballenas</a></li>
+                        <li><a href="proyectos.html#manglares">Restauración de Manglares</a></li>
+                    </ul>
+                </li>
+                <li><a class="boton_menu" href="involucrar.html">Involucrate</a></li>
+                <li><a class="boton_menu" href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <a class="boton_donar" href="donar.html">DONAR</a>
+    </header>
+
+<section class="seccion_hero">
+    <div class="contenido_hero">
+        <h1 class="titulo_principal">PROTEGIENDO NUESTROS MARES</h1>
+
+        <p class="descripcion_principal">
+            Trabajamos por la conservación marina y la protección de las especies 
+            que habitan nuestros océanos, creando conciencia y acción colectiva.
+        </p>
+
+        <a href="contacto.html" class="boton_hero">Unite a la causa</a>
+    </div>
+</section>
+
+    <section class="seccion_mision">
+        <h2>Somos una organización dedicada a la protección integral de los mares y océanos.</h2>
+        <p>
+            Limpieza de costas, educación ambiental y monitoreo de especies marinas. 
+            Trabajamos junto a voluntarios, escuelas y comunidades para reducir la contaminación, 
+            promover prácticas sostenibles y defender la biodiversidad oceánica.
+        </p>
+    </section>
+
+<section class="seccion_galeria">
+    <div class="carrusel_container">
+        
+        <button class="carrusel_btn btn_anterior" onclick="moverCarrusel(-1)">
+            <span>❮</span>
+        </button>
+
+        <div class="carrusel_wrapper">
+            <div class="carrusel_track" id="carruselTrack">
+                
+                <div class="tarjeta_imagen">
+                    <img src="img/foto1.jpg" alt="Conservación marina">
+                    <div class="overlay_texto">
+                        <h3>Conservación Marina</h3>
+                        <p>Protegiendo tortugas y especies en peligro</p>
+                    </div>
+                </div>
+                
+                <div class="tarjeta_imagen">
+                    <img src="img/foto2.jpg" alt="Educación Ambiental">
+                    <div class="overlay_texto">
+                        <h3>Educación Ambiental</h3>
+                        <p>Concientizando a las nuevas generaciones</p>
+                    </div>
+                </div>
+                
+                <div class="tarjeta_imagen">
+                    <img src="img/foto3.jpg" alt="Limpieza de Costas">
+                    <div class="overlay_texto">
+                        <h3>Limpieza de Costas</h3>
+                        <p>Combatiendo la contaminación marina</p>
+                    </div>
+                </div>
+
+                <div class="tarjeta_imagen">
+                    <img src="img/proyecto3.jpg" alt="Ballenas">
+                    <div class="overlay_texto">
+                        <h3>Monitoreo de Ballenas</h3>
+                        <p>Investigación de especies marinas</p>
+                    </div>
+                </div>
+
+                <div class="tarjeta_imagen">
+                    <img src="img/proyecto5.jpg" alt="Manglares">
+                    <div class="overlay_texto">
+                        <h3>Restauración de Manglares</h3>
+                        <p>Recuperando ecosistemas costeros</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <button class="carrusel_btn btn_siguiente" onclick="moverCarrusel(1)">
+            <span>❯</span>
+        </button>
+
+    </div>
+
+    <div class="carrusel_indicadores" id="indicadores"></div>
+</section>
+
+
+<section class="seccion_estadisticas">
+    <div class="contenedor_estadisticas">
+        <div class="tarjeta_estadistica">
+            <h2 class="numero_estadistica">500+</h2>
+            <p class="texto_estadistica">Especies Protegidas</p>
+        </div>
+        
+        <div class="tarjeta_estadistica">
+            <h2 class="numero_estadistica">10+</h2>
+            <p class="texto_estadistica">Años de Experiencia</p>
+        </div>
+        
+        <div class="tarjeta_estadistica">
+            <h2 class="numero_estadistica">25+</h2>
+            <p class="texto_estadistica">Proyectos Completados</p>
+        </div>
+        
+        <div class="tarjeta_estadistica">
+            <h2 class="numero_estadistica">95%</h2>
+            <p class="texto_estadistica">Éxito en Conservación</p>
+        </div>
+    </div>
+</section>
+
+<div class="paginacion">
+        <a href="index.html" class="pagina_btn activo">1</a>
+        <a href="nosotros.html" class="pagina_btn">2</a>
+        <a href="proyectos.html" class="pagina_btn">3</a>
+        <a href="involucrar.html" class="pagina_btn">4</a>
+        <a href="contacto.html" class="pagina_btn">5</a>
+        <a href="donar.html" class="pagina_btn">6</a>
+    <a href="nosotros.html" class="pagina_btn">»</a>
+</div>
+
+<footer class="footer_principal">
+    <div class="contenedor_footer">
+        
+        <div class="columna_footer">
+            <div class="logo_footer">
+                <img src="img/logo.jpg" alt="Olas de Vida Logo">
+            </div>
+            <p class="descripcion_footer">
+                Protegiendo nuestros océanos con acciones concretas para la conservación 
+                marina y el cuidado de la biodiversidad.
+            </p>
+        </div>
+
+        <div class="columna_footer">
+            <h3>Navegación del sitio</h3>
+            <ul class="lista_footer">
+                <li><a href="#">Volver hacia arriba</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="involucrar.html">Involucrate</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+
+        <div class="columna_footer">
+            <h3>Proyectos</h3>
+            <ul class="lista_footer">
+                    <li><a href="proyectos.html#tortugas">Protección de Tortugas</a></li>
+                    <li><a href="proyectos.html#arrecifes">Restauración de Arrecifes</a></li>
+                    <li><a href="proyectos.html#costas">Limpieza de Costas</a></li>
+                    <li><a href="proyectos.html#ballenas">Monitoreo de Ballenas</a></li>
+                    <li><a href="proyectos.html#manglares">Restauración de Manglares</a></li>
+            </ul>
+        </div>
+
+        <div class="columna_footer">
+            <h3>Contacto</h3>
+            <ul class="lista_footer">
+                <li><a href="mailto:info@olasdevida.org">info@olasdevida.org</a></li>
+                <li><a href="tel:+5491112345678">+54 9 11 1234-5678</a></li>
+                <li><a href="#">Centro de Ayuda</a></li>
+                <li><a href="#">Comunidad</a></li>
+            </ul>
+        </div>
+
+        <div class="columna_footer">
+            <h3>Legal</h3>
+            <ul class="lista_footer">
+                <li><a href="#">Términos de Servicio</a></li>
+                <li><a href="#">Política de Privacidad</a></li>
+                <li><a href="#">Política de Cookies</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+            </ul>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>

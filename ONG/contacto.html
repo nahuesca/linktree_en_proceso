@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contacto</title>
+    <link rel="icon" type="image/x-icon" href="img/logo_favicon.ico">
+</head>
+<body>
+
+    <header class="barra_navegacion">
+        <div class="logo"> <a href="index.html"><img src="img/logo.jpg" alt="logo_olas_de_vida"></a></div>
+
+        <nav>
+            <ul class="menu">
+                <li><a class="boton_menu" href="index.html">Inicio</a></li>
+                <li><a class="boton_menu" href="nosotros.html">Nosotros</a></li>
+                <li class="item_desplegable">
+                    <a class="boton_menu" href="proyectos.html">Proyectos</a>
+                    <ul class="menu_desplegable">
+                        <li><a href="proyectos.html#tortugas">Protección de Tortugas</a></li>
+                        <li><a href="proyectos.html#arrecifes">Restauración de Arrecifes</a></li>
+                        <li><a href="proyectos.html#costas">Limpieza de Costas</a></li>
+                        <li><a href="proyectos.html#ballenas">Monitoreo de Ballenas</a></li>
+                        <li><a href="proyectos.html#manglares">Restauración de Manglares</a></li>
+                    </ul>
+                </li>
+                <li><a class="boton_menu" href="involucrar.html">Involucrate</a></li>
+                <li><a class="boton_menu" href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <a class="boton_donar" href="donar.html">DONAR</a>
+    </header>
+
+    <section class="hero_contacto" style="padding-top: 140px;">
+        <div class="contenido_hero_contacto">
+            <h1>CONTACTANOS</h1>
+            <p>Estamos aquí para responder todas tus consultas</p>
+        </div>
+    </section>
+
+    <section class="seccion_contacto">
+        <div class="contenedor_contacto">
+            
+            <div class="columna_formulario">
+                <h2>Envianos tu mensaje</h2>
+                <p class="subtitulo_form">Completa el formulario y te responderemos a la brevedad</p>
+                
+                <form class="formulario_contacto" action="#" method="POST">
+                    <div class="grupo_input">
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Juan Pérez">
+                    </div>
+
+                    <div class="grupo_input">
+                        <label for="email">Correo electrónico *</label>
+                        <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
+                    </div>
+
+                    <div class="grupo_input">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="+54 9 11 1234-5678">
+                    </div>
+
+                    <div class="grupo_input">
+                        <label for="asunto">Asunto *</label>
+                        <select id="asunto" name="asunto" required>
+                            <option value="">Selecciona un asunto</option>
+                            <option value="voluntariado">Quiero ser voluntario</option>
+                            <option value="donacion">Consulta sobre donaciones</option>
+                            <option value="proyecto">Información sobre proyectos</option>
+                            <option value="alianza">Propuesta de alianza</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo_input">
+                        <label for="mensaje">Mensaje *</label>
+                        <textarea id="mensaje" name="mensaje" rows="6" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                    </div>
+
+                    <button type="submit" class="boton_enviar">Enviar Mensaje</button>
+                </form>
+                <div id="mensaje_exito" class="mensaje_exito oculto">
+                    ¡Tu mensaje fue enviado con éxito! 
+                </div>
+            </div>
+
+            <div class="columna_info">
+                <h2>Información de Contacto</h2>
+                
+                <div class="tarjeta_info">
+                    <div class="icono_valor"><img src="img/mail.png" alt="respeto"></div>
+                    <div class="texto_info">
+                        <h3>Email</h3>
+                        <p>info@olasdevida.org</p>
+                        <p>contacto@olasdevida.org</p>
+                    </div>
+                </div>
+
+                <div class="tarjeta_info">
+                    <div class="icono_valor"><img src="img/telefono.png" alt="respeto"></div>
+                    <div class="texto_info">
+                        <h3>Teléfono</h3>
+                        <p>+54 9 11 1234-5678</p>
+                        <p>Lun - Vie: 9:00 - 18:00</p>
+                    </div>
+                </div>
+
+                <div class="tarjeta_info">
+                    <div class="icono_valor"><img src="img/ubi.png" alt="respeto"></div>
+                    <div class="texto_info">
+                        <h3>Oficina Central</h3>
+                        <p>Av. Costanera 1234</p>
+                        <p>Buenos Aires, Argentina</p>
+                    </div>
+                </div>
+
+                <div class="tarjeta_info">
+                    <div class="icono_valor"><img src="img/redes.png" alt="respeto"></div>
+                    <div class="texto_info">
+                        <h3>Redes Sociales</h3>
+                        <div class="redes_contacto">
+                            <a href="https://www.facebook.com/?locale=es_LA" class="red_contacto">Facebook</a>
+                            <a href="https://www.facebook.com/?locale=es_LA" class="red_contacto">Instagram</a>
+                            <a href="https://x.com/?lang=es" class="red_contacto">Twitter</a>
+                            <a href="https://ar.linkedin.com/" class="red_contacto">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="seccion_faq">
+        <div class="contenedor_faq">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="grid_faq">
+                <div class="tarjeta_faq">
+                    <h3>¿Cómo puedo ser voluntario?</h3>
+                    <p>Completa el formulario seleccionando "Quiero ser voluntario" o visita nuestra página de Involucrate para más información.</p>
+                </div>
+                <div class="tarjeta_faq">
+                    <h3>¿Aceptan donaciones?</h3>
+                    <p>Sí, aceptamos donaciones monetarias y en especie. Visita nuestra página de Donar para conocer las opciones.</p>
+                </div>
+                <div class="tarjeta_faq">
+                    <h3>¿Dónde operan?</h3>
+                    <p>Tenemos proyectos en Costa Rica, Filipinas, Argentina, Mozambique y México. Consulta la página de Proyectos para más detalles.</p>
+                </div>
+                <div class="tarjeta_faq">
+                    <h3>¿Cuánto tardan en responder?</h3>
+                    <p>Respondemos todos los mensajes en un plazo de 24-48 horas hábiles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="paginacion">
+        <a href="involucrar.html" class="pagina_btn">«</a>
+            <a href="index.html" class="pagina_btn">1</a>
+            <a href="nosotros.html" class="pagina_btn">2</a>
+            <a href="proyectos.html" class="pagina_btn">3</a>
+            <a href="involucrar.html" class="pagina_btn">4</a>
+            <a href="contacto.html" class="pagina_btn activo">5</a>
+            <a href="donar.html" class="pagina_btn">6</a>
+        <a href="donar.html" class="pagina_btn">»</a>
+    </div>
+
+<footer class="footer_principal">
+    <div class="contenedor_footer">
+        
+        <div class="columna_footer">
+            <div class="logo_footer">
+                <img src="img/logo.jpg" alt="Olas de Vida Logo">
+            </div>
+            <p class="descripcion_footer">
+                Protegiendo nuestros océanos con acciones concretas para la conservación 
+                marina y el cuidado de la biodiversidad.
+            </p>
+        </div>
+
+        <div class="columna_footer">
+            <h3>Navegación del sitio</h3>
+            <ul class="lista_footer">
+                <li><a href="#">Volver hacia arriba</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="involucrar.html">Involucrate</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+
+        <div class="columna_footer">
+            <h3>Proyectos</h3>
+            <ul class="lista_footer">
+                <li><a href="proyectos.html#tortugas">Protección de Tortugas</a></li>
+                <li><a href="proyectos.html#arrecifes">Restauración de Arrecifes</a></li>
+                <li><a href="proyectos.html#costas">Limpieza de Costas</a></li>
+                <li><a href="proyectos.html#ballenas">Monitoreo de Ballenas</a></li>
+                <li><a href="proyectos.html#manglares">Restauración de Manglares</a></li>
+            </ul>
+        </div>
+
+        <div class="columna_footer">
+            <h3>Contacto</h3>
+            <ul class="lista_footer">
+                <li><a href="mailto:info@olasdevida.org">info@olasdevida.org</a></li>
+                <li><a href="tel:+5491112345678">+54 9 11 1234-5678</a></li>
+                <li><a href="#">Centro de Ayuda</a></li>
+                <li><a href="#">Comunidad</a></li>
+            </ul>
+        </div>
+
+        <div class="columna_footer">
+            <h3>Legal</h3>
+            <ul class="lista_footer">
+                <li><a href="#">Términos de Servicio</a></li>
+                <li><a href="#">Política de Privacidad</a></li>
+                <li><a href="#">Política de Cookies</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+            </ul>
+        </div>
+
+    </div>
+</footer>
+
+
+    <script>
+    document.querySelector(".formulario_contacto").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const mensaje = document.getElementById("mensaje_exito");
+
+        mensaje.classList.remove("oculto");
+        mensaje.classList.add("mostrar");
+
+        this.reset();
+
+        setTimeout(() => {
+            mensaje.classList.add("oculto");
+            mensaje.classList.remove("mostrar");
+        }, 3500);
+    });
+    </script>
+</body>
+</html>

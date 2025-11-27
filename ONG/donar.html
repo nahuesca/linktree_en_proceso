@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Donar</title>
+</head>
+<body>
+
+    <header class="barra_navegacion">
+        <div class="logo"> <a href="index.html"><img src="img/logo.jpg" alt="logo_olas_de_vida"></a></div>
+
+        <nav>
+            <ul class="menu">
+                <li><a class="boton_menu" href="index.html">Inicio</a></li>
+                <li><a class="boton_menu" href="nosotros.html">Nosotros</a></li>
+                <li class="item_desplegable">
+                    <a class="boton_menu" href="proyectos.html">Proyectos</a>
+                    <ul class="menu_desplegable">
+                        <li><a href="proyectos.html#tortugas">Protección de Tortugas</a></li>
+                        <li><a href="proyectos.html#arrecifes">Restauración de Arrecifes</a></li>
+                        <li><a href="proyectos.html#costas">Limpieza de Costas</a></li>
+                        <li><a href="proyectos.html#ballenas">Monitoreo de Ballenas</a></li>
+                        <li><a href="proyectos.html#manglares">Restauración de Manglares</a></li>
+                    </ul>
+                </li>
+                <li><a class="boton_menu" href="involucrar.html">Involucrate</a></li>
+                <li><a class="boton_menu" href="contacto.html">Contacto</a></li>
+                <li><a class="boton_menu" href="juego.html">Juego</a></li>
+            </ul>
+        </nav>
+
+        <a class="boton_donar" href="donar.html">DONAR</a>
+    </header>
+
+    <section class="hero_donar" style="padding-top: 140px;">
+        <div class="contenido_hero_donar">
+            <h1>TU DONACIÓN SALVA OCÉANOS</h1>
+            <p>Cada aporte nos ayuda a proteger la vida marina y educar a las comunidades</p>
+        </div>
+    </section>
+
+    <section class="seccion_impacto">
+        <div class="contenedor_impacto">
+            <h2>¿Qué logramos con tu donación?</h2>
+            <p class="intro_impacto">
+                Cada peso que donás se invierte directamente en nuestros proyectos de conservación, 
+                rescate de especies y educación ambiental. Tu aporte hace posible nuestro trabajo.
+            </p>
+
+            <div class="grid_impacto">
+                <div class="tarjeta_impacto">
+                    <h3>$2,000</h3>
+                    <p>Protege un nido de tortugas durante toda la temporada de anidación</p>
+                </div>
+
+                <div class="tarjeta_impacto">
+                    <h3>$5,000</h3>
+                    <p>Organiza una jornada completa de limpieza de costas con 50 voluntarios</p>
+                </div>
+
+                <div class="tarjeta_impacto">
+                    <h3>$8,000</h3>
+                    <p>Financia talleres educativos en escuelas durante un mes</p>
+                </div>
+
+                <div class="tarjeta_impacto">
+                    <h3>$15,000</h3>
+                    <p>Apoya la restauración de 100m² de arrecifes de coral</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion_opciones_donacion">
+        <h2>Elegí cómo donar</h2>
+        
+        <div class="contenedor_opciones">
+            
+            <div class="tarjeta_donacion destacada">
+                <div class="badge_donacion">Más Popular</div>
+                <h3>Donación Única</h3>
+                <p class="descripcion_donacion">Hacé un aporte puntual del monto que elijas</p>
+                
+                <div class="montos_sugeridos">
+                    <button class="monto_btn" data-monto="1000">$1,000</button>
+                    <button class="monto_btn" data-monto="3000">$3,000</button>
+                    <button class="monto_btn" data-monto="5000">$5,000</button>
+                    <button class="monto_btn" data-monto="10000">$10,000</button>
+                </div>
+
+                <div class="grupo_monto_personalizado">
+                    <label>O ingresá otro monto:</label>
+                    <div class="input_monto">
+                        <span class="simbolo_peso">$</span>
+                        <input type="number" placeholder="1000" id="monto_personalizado">
+                    </div>
+                </div>
+
+                <button class="boton_donar_principal">Donar ahora</button>
+            </div>
+
+            <div class="tarjeta_donacion">
+                <h3>Donación Mensual</h3>
+                <p class="descripcion_donacion">
+                    Convertite en donante recurrente y generá un impacto sostenido. 
+                    Podés cancelar en cualquier momento.
+                </p>
+                
+                <div class="planes_mensuales">
+                    <div class="plan_mensual">
+                        <div class="monto_plan">$500/mes</div>
+                        <p>Guardián del Mar</p>
+                    </div>
+                    <div class="plan_mensual">
+                        <div class="monto_plan">$1,500/mes</div>
+                        <p>Protector Marino</p>
+                    </div>
+                    <div class="plan_mensual">
+                        <div class="monto_plan">$3,000/mes</div>
+                        <p>Embajador Oceánico</p>
+                    </div>
+                </div>
+
+                <button class="boton_donar_secundario">Donar mensualmente</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="seccion_metodos_pago">
+        <div class="contenedor_metodos">
+            <h2>Métodos de pago</h2>
+            <p>Aceptamos múltiples formas de pago seguras</p>
+            
+            <div class="grid_metodos">
+                <div class="metodo_pago">
+                    <h4>Tarjetas de Crédito/Débito</h4>
+                    <p>Visa, Mastercard, American Express</p>
+                </div>
+
+                <div class="metodo_pago">
+                    <h4>Transferencia Bancaria</h4>
+                    <p>Banco Nación, Galicia, Santander</p>
+                </div>
+
+                <div class="metodo_pago">
+                    <h4>Mercado Pago</h4>
+                    <p>Pago digital rápido y seguro</p>
+                </div>
+
+                <div class="metodo_pago">
+                    <h4>PayPal</h4>
+                    <p>Donaciones internacionales</p>
+                </div>
+            </div>
+
+            <div class="info_seguridad">
+                <p>Todas las transacciones son seguras y encriptadas</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion_otras_formas">
+        <h2>Otras formas de ayudar</h2>
+        
+        <div class="contenedor_otras_formas">
+            
+            <div class="tarjeta_otra_forma">
+                <h3>Donaciones en especie</h3>
+                <p>
+                    Aceptamos equipamiento de buceo, materiales educativos, 
+                    herramientas de limpieza y equipos de rescate.
+                </p>
+                <a href="#" class="link_otra_forma">Conocer más →</a>
+            </div>
+
+            <div class="tarjeta_otra_forma">
+                <h3>Donaciones corporativas</h3>
+                <p>
+                    Tu empresa puede apoyar nuestros proyectos y obtener 
+                    beneficios fiscales y reconocimiento público.
+                </p>
+                <a href="#" class="link_otra_forma">Contactar →</a>
+            </div>
+
+            <div class="tarjeta_otra_forma">
+                <h3>Legados y testamentos</h3>
+                <p>
+                    Dejá un legado duradero incluyendo a Olas de Vida 
+                    en tu testamento.
+                </p>
+                <a href="#" class="link_otra_forma">Más información →</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="seccion_transparencia">
+        <div class="contenedor_transparencia">
+            <h2>Compromiso con la transparencia</h2>
+            <p class="intro_transparencia">
+                Creemos en la rendición de cuentas. Cada año publicamos informes detallados 
+                sobre cómo utilizamos las donaciones recibidas.
+            </p>
+
+            <div class="grid_transparencia">
+                <div class="item_transparencia">
+                    <div class="porcentaje">75%</div>
+                    <p>Proyectos y programas</p>
+                </div>
+
+                <div class="item_transparencia">
+                    <div class="porcentaje">15%</div>
+                    <p>Administración</p>
+                </div>
+
+                <div class="item_transparencia">
+                    <div class="porcentaje">10%</div>
+                    <p>Recaudación de fondos</p>
+                </div>
+            </div>
+
+            <a href="#" class="link_informe">Ver informe anual completo →</a>
+        </div>
+    </section>
+
+    <section class="seccion_testimonios_donantes">
+        <h2>Lo que dicen nuestros donantes</h2>
+        
+        <div class="contenedor_testimonios_donantes">
+            
+            <div class="testimonio_donante">
+                <p class="texto_testimonio_donante">
+                    "Donar a Olas de Vida me da tranquilidad de saber que mi aporte 
+                    va directamente a proyectos que realmente hacen la diferencia."
+                </p>
+                <div class="autor_testimonio">
+                    <strong>Ana Martínez</strong>
+                    <span>Donante mensual desde 2021</span>
+                </div>
+            </div>
+
+            <div class="testimonio_donante">
+                <p class="texto_testimonio_donante">
+                    "Ver los informes anuales y las fotos de los proyectos me motiva 
+                    a seguir apoyando. Es increíble lo que logran."
+                </p>
+                <div class="autor_testimonio">
+                    <strong>Roberto Silva</strong>
+                    <span>Donante corporativo</span>
+                </div>
+            </div>
+
+            <div class="testimonio_donante">
+                <p class="texto_testimonio_donante">
+                    "Empecé donando poco, pero ver el impacto real me animó a aumentar 
+                    mi contribución mensual. Vale cada peso."
+                </p>
+                <div class="autor_testimonio">
+                    <strong>Carolina López</strong>
+                    <span>Embajadora Oceánica</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="seccion_faq_donaciones">
+        <h2>Preguntas frecuentes sobre donaciones</h2>
+        
+        <div class="contenedor_faq_donaciones">
+            
+            <div class="item_faq_donacion">
+                <h3>¿Mi donación es deducible de impuestos?</h3>
+                <p>
+                    Sí, Olas de Vida está registrada como organización sin fines de lucro. 
+                    Te enviaremos un certificado de donación para tu declaración de impuestos.
+                </p>
+            </div>
+
+            <div class="item_faq_donacion">
+                <h3>¿Puedo cancelar mi donación mensual?</h3>
+                <p>
+                    Por supuesto. Podés pausar o cancelar tu donación mensual en cualquier momento 
+                    sin ningún compromiso. Solo envianos un email a donaciones@olasdevida.org
+                </p>
+            </div>
+
+            <div class="item_faq_donacion">
+                <h3>¿Cómo sé que mi donación se usa correctamente?</h3>
+                <p>
+                    Publicamos informes anuales detallados y enviamos actualizaciones regulares 
+                    por email a todos nuestros donantes. También podés solicitar información específica 
+                    en cualquier momento.
+                </p>
+            </div>
+
+            <div class="item_faq_donacion">
+                <h3>¿Puedo especificar para qué proyecto quiero donar?</h3>
+                <p>
+                    Sí, podés elegir destinar tu donación a un proyecto específico como tortugas marinas, 
+                    limpieza de costas o educación ambiental. Indicalo en el formulario de donación.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cta_donar_final">
+        <div class="contenido_cta_donar">
+            <h2>Cada donación cuenta</h2>
+            <p>Tu aporte de hoy es la protección del océano de mañana</p>
+            <button class="boton_cta_donar_grande">Hacer una donación</button>
+        </div>
+    </section>
+
+    <div class="paginacion">
+        <a href="contacto.html" class="pagina_btn">«</a>
+            <a href="index.html" class="pagina_btn">1</a>
+            <a href="nosotros.html" class="pagina_btn">2</a>
+            <a href="proyectos.html" class="pagina_btn">3</a>
+            <a href="involucrar.html" class="pagina_btn">4</a>
+            <a href="contacto.html" class="pagina_btn">5</a>
+            <a href="donar.html" class="pagina_btn activo">6</a>
+            <a href="juego.html" class="pagina_btn">7</a>
+            <a href="juego.html" class="pagina_btn">»</a>
+    </div>
+
+<footer class="footer_principal">
+    <div class="contenedor_footer">
+        
+        <div class="columna_footer">
+            <div class="logo_footer">
+                <img src="img/logo.jpg" alt="Olas de Vida Logo">
+            </div>
+            <p class="descripcion_footer">
+                Protegiendo nuestros océanos con acciones concretas para la conservación 
+                marina y el cuidado de la biodiversidad.
+            </p>
+        </div>
+
+        <div class="columna_footer">
+            <h3>Navegación del sitio</h3>
+            <ul class="lista_footer">
+                <li><a href="#">Volver hacia arriba</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="involucrar.html">Involucrate</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="juego.html">Juego</a></li>
+            </ul>
+        </div>
+
+        <div class="columna_footer">
+            <h3>Proyectos</h3>
+            <ul class="lista_footer">
+                <li><a href="proyectos.html#tortugas">Protección de Tortugas</a></li>
+                <li><a href="proyectos.html#arrecifes">Restauración de Arrecifes</a></li>
+                <li><a href="proyectos.html#costas">Limpieza de Costas</a></li>
+                <li><a href="proyectos.html#ballenas">Monitoreo de Ballenas</a></li>
+                <li><a href="proyectos.html#manglares">Restauración de Manglares</a></li>
+            </ul>
+        </div>
+
+        <div class="columna_footer">
+            <h3>Contacto</h3>
+            <ul class="lista_footer">
+                <li><a href="mailto:info@olasdevida.org">info@olasdevida.org</a></li>
+                <li><a href="tel:+5491112345678">+54 9 11 1234-5678</a></li>
+                <li><a href="#">Centro de Ayuda</a></li>
+                <li><a href="#">Comunidad</a></li>
+            </ul>
+        </div>
+
+        <div class="columna_footer">
+            <h3>Legal</h3>
+            <ul class="lista_footer">
+                <li><a href="#">Términos de Servicio</a></li>
+                <li><a href="#">Política de Privacidad</a></li>
+                <li><a href="#">Política de Cookies</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+            </ul>
+        </div>
+
+    </div>
+</footer>
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+
+            let montoSeleccionado = 0;
+            let tipoSeleccionado = 'unica'; 
+            let planMensualSeleccionado = null;
+
+            const botonesMontos = document.querySelectorAll('.monto_btn');
+            const inputPersonalizado = document.getElementById('monto_personalizado');
+            
+            botonesMontos.forEach(boton => {
+                boton.addEventListener('click', function() {
+                    botonesMontos.forEach(btn => btn.classList.remove('activo'));
+                    
+                    this.classList.add('activo');
+                    
+                    montoSeleccionado = parseInt(this.getAttribute('data-monto'));
+                    
+                    inputPersonalizado.value = '';
+                    
+                    console.log('Monto seleccionado: $' + montoSeleccionado);
+                });
+            });
+
+            if (inputPersonalizado) {
+                inputPersonalizado.addEventListener('input', function() {
+                    botonesMontos.forEach(btn => btn.classList.remove('activo'));
+                    
+                    montoSeleccionado = parseInt(this.value) || 0;
+                    
+                    console.log('Monto personalizado: $' + montoSeleccionado);
+                });
+            }
+
+            const planesMensuales = document.querySelectorAll('.plan_mensual');
+            
+            planesMensuales.forEach(plan => {
+                plan.addEventListener('click', function() {
+                    planesMensuales.forEach(p => {
+                        p.style.background = '#f0f8ff';
+                        p.style.border = 'none';
+                    });
+                    
+                    this.style.background = '#e3f2fd';
+                    this.style.border = '3px solid #0277BD';
+                    
+                    const montoTexto = this.querySelector('.monto_plan').textContent;
+                    planMensualSeleccionado = montoTexto;
+                    montoSeleccionado = parseInt(montoTexto.replace(/[^0-9]/g, ''));
+                    tipoSeleccionado = 'mensual';
+                    
+                    console.log('Plan mensual seleccionado: ' + planMensualSeleccionado);
+                });
+            });
+
+            const botonDonarPrincipal = document.querySelector('.boton_donar_principal');
+            
+            if (botonDonarPrincipal) {
+                botonDonarPrincipal.addEventListener('click', function() {
+                    tipoSeleccionado = 'unica';
+                    procesarDonacion();
+                });
+            }
+
+            const botonDonarSecundario = document.querySelector('.boton_donar_secundario');
+            
+            if (botonDonarSecundario) {
+                botonDonarSecundario.addEventListener('click', function() {
+                    tipoSeleccionado = 'mensual';
+                    procesarDonacion();
+                });
+            }
+
+            const botonesCTA = document.querySelectorAll('.boton_cta_donar_grande, .boton_donar');
+            
+            botonesCTA.forEach(boton => {
+                boton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const seccionOpciones = document.querySelector('.seccion_opciones_donacion');
+                    if (seccionOpciones) {
+                        seccionOpciones.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                });
+            });
+
+            function procesarDonacion() {
+                if (montoSeleccionado <= 0) {
+                    mostrarMensaje('Por favor, seleccioná un monto para donar', 'error');
+                    return;
+                }
+
+                if (montoSeleccionado < 100) {
+                    mostrarMensaje('El monto mínimo de donación es $100', 'error');
+                    return;
+                }
+
+                const tipoDonacion = tipoSeleccionado === 'unica' ? 'única' : 'mensual';
+                const mensaje = `¡Gracias por tu donación ${tipoDonacion} de $${montoSeleccionado.toLocaleString('es-AR')}! Tu aporte ayuda a proteger nuestros océanos. En breve te contactaremos para finalizar el proceso.`;
+                
+                mostrarMensaje(mensaje, 'exito');
+
+                setTimeout(() => {
+                    resetearFormulario();
+                }, 3000);
+
+                console.log('Donación procesada:', {
+                    tipo: tipoSeleccionado,
+                    monto: montoSeleccionado,
+                    timestamp: new Date().toISOString()
+                });
+            }
+
+            function mostrarMensaje(texto, tipo) {
+                const mensaje = document.createElement('div');
+                mensaje.className = `mensaje_donacion mensaje_${tipo}`;
+                mensaje.innerHTML = `
+                    <div class="contenido_mensaje">
+                        <span class="icono_mensaje">${tipo === 'exito' ? '✓' : '⚠'}</span>
+                        <p>${texto}</p>
+                        <button class="cerrar_mensaje">×</button>
+                    </div>
+                `;
+
+                mensaje.style.cssText = `
+                    position: fixed;
+                    top: 100px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    z-index: 9999;
+                    background: ${tipo === 'exito' ? 'linear-gradient(135deg, #4CAF50, #45a049)' : 'linear-gradient(135deg, #ff9800, #f57c00)'};
+                    color: white;
+                    padding: 20px 30px;
+                    border-radius: 15px;
+                    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+                    min-width: 320px;
+                    max-width: 90%;
+                    animation: slideDown 0.5s ease;
+                `;
+
+                document.body.appendChild(mensaje);
+
+                const btnCerrar = mensaje.querySelector('.cerrar_mensaje');
+                btnCerrar.style.cssText = `
+                    background: transparent;
+                    border: none;
+                    color: white;
+                    font-size: 2rem;
+                    cursor: pointer;
+                    position: absolute;
+                    top: 10px;
+                    right: 15px;
+                    line-height: 1;
+                `;
+
+                btnCerrar.addEventListener('click', () => {
+                    mensaje.style.animation = 'slideUp 0.5s ease';
+                    setTimeout(() => mensaje.remove(), 500);
+                });
+
+                setTimeout(() => {
+                    mensaje.style.animation = 'slideUp 0.5s ease';
+                    setTimeout(() => mensaje.remove(), 500);
+                }, 5000);
+            }
+
+            function resetearFormulario() {
+                montoSeleccionado = 0;
+                planMensualSeleccionado = null;
+                
+                botonesMontos.forEach(btn => btn.classList.remove('activo'));
+                
+                if (inputPersonalizado) {
+                    inputPersonalizado.value = '';
+                }
+                
+                planesMensuales.forEach(plan => {
+                    plan.style.background = '#f0f8ff';
+                    plan.style.border = 'none';
+                });
+            }
+
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideDown {
+                    from {
+                        opacity: 0;
+                        transform: translate(-50%, -100px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translate(-50%, 0);
+                    }
+                }
+
+                @keyframes slideUp {
+                    from {
+                        opacity: 1;
+                        transform: translate(-50%, 0);
+                    }
+                    to {
+                        opacity: 0;
+                        transform: translate(-50%, -100px);
+                    }
+                }
+
+                .contenido_mensaje {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    position: relative;
+                }
+
+                .icono_mensaje {
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
+
+                .contenido_mensaje p {
+                    margin: 0;
+                    flex: 1;
+                    font-size: 1rem;
+                    line-height: 1.5;
+                }
+
+                .monto_btn.activo {
+                    animation: pulso 0.3s ease;
+                }
+
+                @keyframes pulso {
+                    0%, 100% { transform: scale(1); }
+                    50% { transform: scale(1.05); }
+                }
+
+                .boton_donar_principal:active,
+                .boton_donar_secundario:active {
+                    transform: scale(0.95);
+                }
+            `;
+            document.head.appendChild(style);
+
+            console.log('Sistema de donaciones inicializado correctamente');
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Previa - Juego Océano</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(180deg, #1e3a8a 0%, #0c4a6e 100%);
+            color: white;
+        }
+        
+        .contenedor-pagina {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contenido-principal {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 150px 20px 40px;
+        }
+        
+        #gameCanvas {
+            border: 4px solid #0ea5e9;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        #info {
+            margin-top: 20px;
+            text-align: center;
+            background: rgba(0,0,0,0.3);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+        }
+        
+        h2 {
+            margin-top: 0;
+            color: #0ea5e9;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor-pagina">
+        <header class="barra_navegacion">
+            <div class="logo"> <a href="index.html"><img src="img/logo.jpg" alt="logo_olas_de_vida"></a></div>
+
+            <nav>
+                <ul class="menu">
+                    <li><a class="boton_menu" href="index.html">Inicio</a></li>
+                    <li><a class="boton_menu" href="nosotros.html">Nosotros</a></li>
+                    <li class="item_desplegable">
+                        <a class="boton_menu" href="proyectos.html">Proyectos</a>
+                        <ul class="menu_desplegable">
+                            <li><a href="proyectos.html#tortugas">Protección de Tortugas</a></li>
+                            <li><a href="proyectos.html#arrecifes">Restauración de Arrecifes</a></li>
+                            <li><a href="proyectos.html#costas">Limpieza de Costas</a></li>
+                            <li><a href="proyectos.html#ballenas">Monitoreo de Ballenas</a></li>
+                            <li><a href="proyectos.html#manglares">Restauración de Manglares</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="boton_menu" href="involucrar.html">Involucrate</a></li>
+                    <li><a class="boton_menu" href="contacto.html">Contacto</a></li>
+                    <li><a class="boton_menu" href="juego.html">Juego</a></li>
+                </ul>
+            </nav>
+
+            <a class="boton_donar" href="donar.html">DONAR</a>
+        </header>
+
+        <div class="contenido-principal">
+            <canvas id="gameCanvas" width="600" height="400"></canvas>
+            
+            <div id="info">
+                <p><strong>Controles:</strong> Usa W/S para mover el pez y esquivar la basura</p>
+            </div>
+        </div>
+
+        <div class="paginacion">
+            <a href="donar.html" class="pagina_btn">«</a>
+            <a href="index.html" class="pagina_btn">1</a>
+            <a href="nosotros.html" class="pagina_btn">2</a>
+            <a href="proyectos.html" class="pagina_btn">3</a>
+            <a href="involucrar.html" class="pagina_btn">4</a>
+            <a href="contacto.html" class="pagina_btn">5</a>
+            <a href="donar.html" class="pagina_btn">6</a>
+            <a href="juego.html" class="pagina_btn activo">7</a>
+        </div>
+
+        <footer class="footer_principal">
+            <div class="contenedor_footer">
+                
+                <div class="columna_footer">
+                    <div class="logo_footer">
+                        <img src="img/logo.jpg" alt="Olas de Vida Logo">
+                    </div>
+                    <p class="descripcion_footer">
+                        Protegiendo nuestros océanos con acciones concretas para la conservación 
+                        marina y el cuidado de la biodiversidad.
+                    </p>
+                </div>
+
+                <div class="columna_footer">
+                    <h3>Navegación del sitio</h3>
+                    <ul class="lista_footer">
+                        <li><a href="#">Volver hacia arriba</a></li>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="proyectos.html">Proyectos</a></li>
+                        <li><a href="involucrar.html">Involucrate</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="juego.html">Juego</a></li>
+                    </ul>
+                </div>
+
+                <div class="columna_footer">
+                    <h3>Proyectos</h3>
+                    <ul class="lista_footer">
+                        <li><a href="proyectos.html#tortugas">Protección de Tortugas</a></li>
+                        <li><a href="proyectos.html#arrecifes">Restauración de Arrecifes</a></li>
+                        <li><a href="proyectos.html#costas">Limpieza de Costas</a></li>
+                        <li><a href="proyectos.html#ballenas">Monitoreo de Ballenas</a></li>
+                        <li><a href="proyectos.html#manglares">Restauración de Manglares</a></li>
+                    </ul>
+                </div>
+
+                <div class="columna_footer">
+                    <h3>Contacto</h3>
+                    <ul class="lista_footer">
+                        <li><a href="mailto:info@olasdevida.org">info@olasdevida.org</a></li>
+                        <li><a href="tel:+5491112345678">+54 9 11 1234-5678</a></li>
+                        <li><a href="contacto.html">Centro de Ayuda</a></li>
+                        <li><a href="#">Comunidad</a></li>
+                    </ul>
+                </div>
+
+                <div class="columna_footer">
+                    <h3>Legal</h3>
+                    <ul class="lista_footer">
+                        <li><a href="#">Términos de Servicio</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Política de Cookies</a></li>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let game = {
+            pezX: 100,
+            pezY: canvas.height / 2,
+            pezAncho: 50,
+            pezAlto: 40,
+            velocidadPez: 5,
+            puntuacion: 0,
+            juegoActivo: true,
+            basura: [],
+            frameCount: 0
+        };
+
+        const keys = {};
+
+        function drawFish(x, y) {
+            // Cuerpo del pez
+            ctx.fillStyle = '#FF8C00';
+            ctx.beginPath();
+            ctx.ellipse(x + 20, y + 20, 20, 15, 0, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Cola
+            ctx.fillStyle = '#FF6400';
+            ctx.beginPath();
+            ctx.moveTo(x, y + 20);
+            ctx.lineTo(x - 15, y + 10);
+            ctx.lineTo(x - 15, y + 30);
+            ctx.closePath();
+            ctx.fill();
+            
+            // Aleta superior
+            ctx.beginPath();
+            ctx.moveTo(x + 15, y + 10);
+            ctx.lineTo(x + 20, y);
+            ctx.lineTo(x + 25, y + 15);
+            ctx.closePath();
+            ctx.fill();
+            
+            // Ojo
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            ctx.arc(x + 28, y + 13, 4, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = 'black';
+            ctx.beginPath();
+            ctx.arc(x + 29, y + 13, 2, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        function drawTrash(trash) {
+            switch(trash.tipo) {
+                case 0: // Botella
+                    ctx.fillStyle = '#6496FF';
+                    ctx.fillRect(trash.x + 10, trash.y, 20, 35);
+                    ctx.fillStyle = '#5078C8';
+                    ctx.fillRect(trash.x + 12, trash.y, 16, 8);
+                    break;
+                    
+                case 1: // Bolsa
+                    ctx.fillStyle = 'rgba(200, 200, 200, 0.6)';
+                    ctx.beginPath();
+                    ctx.moveTo(trash.x + 5, trash.y + 5);
+                    ctx.lineTo(trash.x + 35, trash.y + 5);
+                    ctx.lineTo(trash.x + 30, trash.y + 35);
+                    ctx.lineTo(trash.x + 10, trash.y + 35);
+                    ctx.closePath();
+                    ctx.fill();
+                    ctx.strokeStyle = '#969696';
+                    ctx.stroke();
+                    break;
+                    
+                case 2: // Lata
+                    ctx.fillStyle = '#C83232';
+                    ctx.fillRect(trash.x + 8, trash.y + 5, 25, 30);
+                    ctx.fillStyle = '#961E1E';
+                    ctx.fillRect(trash.x + 10, trash.y + 8, 21, 8);
+                    break;
+            }
+        }
+
+        function checkCollision(rect1, rect2) {
+            return rect1.x < rect2.x + rect2.width &&
+                   rect1.x + rect1.width > rect2.x &&
+                   rect1.y < rect2.y + rect2.height &&
+                   rect1.y + rect1.height > rect2.y;
+        }
+
+        function update() {
+            if (!game.juegoActivo) return;
+
+            game.frameCount++;
+
+            // Movimiento del pez
+            if (keys['ArrowUp'] || keys['w'] || keys['W']) {
+                game.pezY = Math.max(0, game.pezY - game.velocidadPez);
+            }
+            if (keys['ArrowDown'] || keys['s'] || keys['S']) {
+                game.pezY = Math.min(canvas.height - game.pezAlto, game.pezY + game.velocidadPez);
+            }
+
+            // Generar basura
+            if (game.frameCount % 60 === 0) {
+                game.basura.push({
+                    x: canvas.width,
+                    y: Math.random() * (canvas.height - 50),
+                    width: 40,
+                    height: 40,
+                    velocidad: 3 + Math.random() * 3,
+                    tipo: Math.floor(Math.random() * 3)
+                });
+            }
+
+            // Mover basura
+            game.basura = game.basura.filter(trash => {
+                trash.x -= trash.velocidad;
+
+                // Colisión
+                if (checkCollision(
+                    {x: game.pezX, y: game.pezY, width: game.pezAncho, height: game.pezAlto},
+                    trash
+                )) {
+                    game.juegoActivo = false;
+                }
+
+                // Puntuación
+                if (trash.x + trash.width < 0) {
+                    game.puntuacion++;
+                    return false;
+                }
+
+                return trash.x > -trash.width;
+            });
+        }
+
+        function draw() {
+            // Fondo oceánico
+            const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            gradient.addColorStop(0, '#0A5078');
+            gradient.addColorStop(1, '#0A3050');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Burbujas decorativas
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+            for (let i = 0; i < 15; i++) {
+                let bubbleY = (game.frameCount * 2 + i * 40) % canvas.height;
+                ctx.beginPath();
+                ctx.arc(50 + i * 55, bubbleY, 8, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            if (game.juegoActivo) {
+                // Dibujar pez
+                drawFish(game.pezX, game.pezY);
+
+                // Dibujar basura
+                game.basura.forEach(drawTrash);
+
+                // Puntuación
+                ctx.fillStyle = 'white';
+                ctx.font = 'bold 24px Arial';
+                ctx.fillText('Puntuación: ' + game.puntuacion, 20, 40);
+
+                // Instrucciones
+                ctx.font = '16px Arial';
+                ctx.fillText('Usa ↑↓ o W/S para moverte', 20, canvas.height - 20);
+
+            } else {
+                // Game Over
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.fillStyle = 'white';
+                ctx.font = 'bold 48px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('¡Juego Terminado!', canvas.width / 2, canvas.height / 2 - 50);
+
+                ctx.font = '28px Arial';
+                ctx.fillText('Puntuación: ' + game.puntuacion, canvas.width / 2, canvas.height / 2 + 10);
+
+                ctx.font = '20px Arial';
+                ctx.fillText('Presiona ESPACIO para jugar de nuevo', canvas.width / 2, canvas.height / 2 + 70);
+
+                ctx.fillStyle = '#64C8FF';
+                ctx.font = 'italic 18px Arial';
+                ctx.fillText('¡Protejamos nuestros océanos!', canvas.width / 2, canvas.height / 2 + 120);
+                
+                ctx.textAlign = 'left';
+            }
+        }
+
+        function resetGame() {
+            game.pezY = canvas.height / 2;
+            game.puntuacion = 0;
+            game.basura = [];
+            game.frameCount = 0;
+            game.juegoActivo = true;
+        }
+
+        document.addEventListener('keydown', (e) => {
+            keys[e.key] = true;
+            if (e.key === ' ' && !game.juegoActivo) {
+                resetGame();
+            }
+        });
+
+        document.addEventListener('keyup', (e) => {
+            keys[e.key] = false;
+        });
+
+        function gameLoop() {
+            update();
+            draw();
+            requestAnimationFrame(gameLoop);
+        }
+
+        gameLoop();
+    </script>
+</body>
+</html>
